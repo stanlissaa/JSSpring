@@ -16,7 +16,6 @@ public class UserDaoImpl implements UserDao{
     private EntityManager entityManager;
 
     @Override
-    @Transactional
     public void add(User user) {
         entityManager.persist(user);
     }
@@ -30,12 +29,10 @@ public class UserDaoImpl implements UserDao{
         return entityManager.find(User.class, id);
     }
     @Override
-    @Transactional
     public void update(User user) {
         entityManager.merge(user);
     }
     @Override
-    @Transactional
     public void delete(Long id) {
         User user = entityManager.find(User.class, id);
         if (user != null) {

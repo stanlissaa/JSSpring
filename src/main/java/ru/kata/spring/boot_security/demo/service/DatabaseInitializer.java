@@ -40,8 +40,7 @@ public class DatabaseInitializer implements ApplicationRunner {
             roleDao.add(adminRole);
         }
         User admin = userDao.findByEmail("admin@mail.ru");
-        if (admin == null) {
-            admin = new User("Admin", "admin@mail.ru", passwordEncoder.encode("admin"));
+        if (admin == null) {new User("Admin", "admin@mail.ru", passwordEncoder.encode("admin"), "Adminov", 35);
             admin.setRoles(Set.of(adminRole));
             userDao.add(admin);
         }

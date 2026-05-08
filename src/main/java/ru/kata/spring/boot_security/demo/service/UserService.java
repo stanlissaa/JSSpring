@@ -7,6 +7,6 @@ public interface UserService {
     void add(User user);
     List<User> listUsers();
     User getUserById(Long id);
-    void update(User user);
+    User updateUser(Long id, User user, Long[] roleIds);
     void delete(Long id);
 }
